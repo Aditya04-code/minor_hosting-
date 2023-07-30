@@ -26,9 +26,9 @@ def add_bg_from_local(image_file):
 
 # with open('style.css') as f:
 #     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-add_bg_from_local('C:/Users/adity/OneDrive/Desktop/mp/minor_P/support-system/coding files/Images/bg10.jpg')   
+add_bg_from_local('bg10.jpg')   
 st.markdown("<h1 id='soft_name' style='text-align: center; color: red; font-size: 40px ; text-decoration: underline;'>Smart Rx</h1><br>", unsafe_allow_html=True)
-loaded_model = open("C:/Users/adity/OneDrive/Desktop/mp/minor_P/support-system/coding files/best.pkl","rb")
+loaded_model = open("best.pkl","rb")
 classifer = joblib.load(loaded_model)
 st.sidebar.subheader("Upload Symptoms")
 Uploaded_symptoms=st.sidebar.file_uploader("Upload Symptoms",type=['csv'],label_visibility="hidden")
@@ -406,7 +406,7 @@ diseases_swapped = {v: k for k, v in diseases.items()}
 for i in diseases_swapped:
     if prediction(df) == i:
         st.markdown("<h3 style='color: white;'>There are chances the patient may be suffering from the given condition 👨‍⚕️</h3>", unsafe_allow_html=True)
-        with open('C:/Users/adity/OneDrive/Desktop/mp/minor_P/support-system/coding files/style.css') as f:
+        with open('style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
         st.write(f"<span id='dis'>{diseases_swapped[i]}<span>", unsafe_allow_html=True)
         st.write(dis_link[i]) 
